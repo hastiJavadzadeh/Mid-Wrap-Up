@@ -1,52 +1,64 @@
+
 public class Lecture4Exercises {
 
-    /*
-     *   implement a function that returns factorial of given n
-     *   lecture 4 page 15
-     */
     public long factorial(int n) {
-        return 0L;
+        int x = 1;
+        for (int i = 2; i <= n; i++) {
+            x = x * i;
+        }
+        return x;
     }
 
-    /*
-     *   implement a function that return nth number of fibonacci series
-     *   the series -> 1, 1, 2, 3, 5, 8, ...
-     *   lecture 4 page 19
-     */
     public long fibonacci(int n) {
-        return 0;
+        long result = 0;
+        if (n <= 2) {
+            result = 1;
+        } else {
+            result = fibonacci(n - 1) + fibonacci(n - 2);
+        }
+        return result;
     }
 
-    /*
-     *   implement a function that return reverse of a given word
-     *   lecture 4 page 19
-     */
     public String reverse(String word) {
-        return null;
+        String result = "";
+        for (int i = word.length() - 1; i >= 0; i--) {
+            result = result + word.charAt(i);
+        }
+        return result;
     }
 
-    /*
-     *   implement a function that returns true if the given line is
-     *   palindrome and false if it is not palindrome.
-     *   palindrome is like 'wow', 'never odd or even', 'Wow'
-     *   lecture 4 page 19
-     */
+
     public boolean isPalindrome(String line) {
+        line = line.toLowerCase();
+        String reversed = "";
+        String newLine = "";
+        for (int i = 0; i < line.length(); i++) {
+            if(!Character.isWhitespace(line.charAt(i))) {
+                newLine = newLine + line.charAt(i);
+            }
+        }
+        for (int i = line.length() - 1; i >= 0; i--) {
+            if(!Character.isWhitespace(line.charAt(i))) {
+                reversed = reversed + line.charAt(i);
+            }
+        }
+        if (newLine.equals(reversed)) {
+            return true;
+        }
         return false;
     }
 
-    /*
-     *   implement a function which computes the dot plot of 2 given
-     *   string. dot plot of hello and ali is:
-     *       h e l l o
-     *   h   *
-     *   e     *
-     *   l       * *
-     *   l       * *
-     *   o           *
-     *   lecture 4 page 26
-     */
     public char[][] dotPlot(String str1, String str2) {
-        return null;
+        char[][] chars = new char[str1.length()][str2.length()];
+        for (int i = 0; i < str1.length(); i++) {
+            for (int j = 0; j < str2.length(); j++) {
+                if (str1.charAt(i) == str2.charAt(j)){
+                    chars[i][j] = '*';
+                } else {
+                    chars[i][j] = ' ';
+                }
+            }
+        }
+        return chars;
     }
 }
