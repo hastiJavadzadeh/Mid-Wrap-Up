@@ -60,9 +60,13 @@ public class Lecture6Exercises {
      *   from a 2-dim string array
      *   lecture 6 page 30
      */
-    public List<List<String>> arrayToList(String[][] names) {
-
-        return null;
+    public List<List<String>> arrayToList(String[][] names) { //?
+        List<List<String>> res = new ArrayList<>();
+        for(String[] inner1 : names) {
+            List<String> inner2 = new ArrayList<>(Arrays.asList(inner1));
+            res.add(inner2);
+        }
+        return res;
     }
 
     /*
@@ -88,7 +92,7 @@ public class Lecture6Exercises {
      *   lecture 6 page 30
      */
     public List<String> extractWord(String line) {
-        line = line.replaceAll("[^a-zA-Z0-9]", " ");
+        line = line.replaceAll("[!?,()-+*=@#$%^&]", "");
         List<String> words = new ArrayList<>();
         for (String val: line.split(" ")){
             words.add(val);

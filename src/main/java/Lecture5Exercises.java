@@ -25,7 +25,7 @@ public class Lecture5Exercises {
      *   given length and at least 1 digit and 1 special character
      *   lecture 5 page 14
      */
-    public String strongPassword(int length) throws Exception { //*******************************************
+    public String strongPassword(int length) throws Exception { //***********
 
         final String specialChars = "!@#$%^&*()_-+=[]{}:;,.?<>";
         final String nums = "0123456789";
@@ -51,7 +51,7 @@ public class Lecture5Exercises {
      *   of ones in binary format
      *   lecture 5 page 17
      */
-    public boolean isFiboBin(int n) {
+    public boolean isFiboBin(int n) {//**********************
 
         return false;
     }
